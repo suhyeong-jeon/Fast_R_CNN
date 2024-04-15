@@ -105,7 +105,7 @@
 
 <p align="center"><img src="https://github.com/suhyeong-jeon/Fast_R_CNN/assets/70623959/920434f8-899a-4c81-92a0-5e897ee1a167"></p>
 
-##### Region proposals별로 7*7*512(=25088)의 feature map을 flatten한 후 fc layer에 입력하여 fc layer를 통해 4096 크기의 feature vector를 얻는다.   
+##### Region proposals별로 7 * 7 * 512(=25088)의 feature map을 flatten한 후 fc layer에 입력하여 fc layer를 통해 4096 크기의 feature vector를 얻는다.   
 ##### Input : 7 * 7 * 512 sized feature map, Process : Feature extraction by fc layers, Output : 4096 sized feature vector   
 #####   
 
@@ -124,7 +124,7 @@
 ##### 8. Train Classifier and Bounding Box Regressor by Multi-Task Loss   
 #####   
 ##### Multi-Task-Loss를 사용해 하나의 region proposal에 대한 Classifier와 Bounding box regrssor의 loss를 반환한다. 이후 Back propogation을 통해 두 모델을 한번에 학습시킨다.   
-##### Input : (K+1) sized vector(class score), (K+1)*4 sized vector, Process : Calculate Loss by Multi-Task Loss function, Output : Loss   
+##### Input : (K+1) sized vector(class score), (K+1) * 4 sized vector, Process : Calculate Loss by Multi-Task Loss function, Output : Loss   
 
 <hr>
 
