@@ -87,8 +87,8 @@
 
 ##### 3. Feature Extraction(~layer13 pre-pooling) by VGG 16   
 #####   
-##### VGG16모델에 224*224*3 크기의 원본 이미지를 입력하고, layer13까지의 feature map을 추출한다.   
-##### Input : 224*224*3 sized image, Process : Feature extraction by VGG16, Output : 14*14*12 feature maps   
+##### VGG16모델에 224 * 224 * 3 크기의 원본 이미지를 입력하고, layer13까지의 feature map을 추출한다.   
+##### Input : 224 * 224 * 3 sized image, Process : Feature extraction by VGG16, Output : 14 * 14 * 12 feature maps   
 #####   
 
 ##### 4. Max pooling by RoI Pooling   
@@ -97,7 +97,7 @@
 <p align="center"><img src="https://github.com/suhyeong-jeon/Fast_R_CNN/assets/70623959/f4966c51-70c0-4e28-bbfe-9e507b1612fe"></p>
 
 ##### Region proposals를 layer13을 통해 출력된 feature mpa에 대하여 RoI projection을 진행한 후, RoI pooling을 수행한다. 이를 통해 고정된 7 * 7 크기의 feature map을 추출한다.   
-##### Input : 14 * 14 sized 512 feature maps, 2000 regoin proposals, Process : RoI Pooling, Output : 7*7*512 maps   
+##### Input : 14 * 14 sized 512 feature maps, 2000 regoin proposals, Process : RoI Pooling, Output : 7 * 7 * 512 maps   
 #####   
 
 ##### 5. Feature Vector Extraction by FC Layers   
@@ -106,7 +106,7 @@
 <p align="center"><img src="https://github.com/suhyeong-jeon/Fast_R_CNN/assets/70623959/920434f8-899a-4c81-92a0-5e897ee1a167"></p>
 
 ##### Region proposals별로 7*7*512(=25088)의 feature map을 flatten한 후 fc layer에 입력하여 fc layer를 통해 4096 크기의 feature vector를 얻는다.   
-##### Input : 7*7*512 sized feature map, Process : Feature extraction by fc layers, Output : 4096 sized feature vector   
+##### Input : 7 * 7 * 512 sized feature map, Process : Feature extraction by fc layers, Output : 4096 sized feature vector   
 #####   
 
 ##### 6. Class Prediction by Classifier   
