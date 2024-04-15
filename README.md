@@ -71,6 +71,9 @@
 #####   
 ##### Feature map을 추출하기 위해 VGG16 모델을 사용한다. 먼저 VGG16을 detection task에 맞게 변형시켜줘야한다.   
 ##### 1) VGG16 모델의 마지막 max pooling layer를 RoI pooling layer로 대체한다. 이 때 RoI pooling을 통해 출력되는 feature map의 크기인 H, W는 후속 fc layer와 호환 가능한 크기인 7 * 7로 설정해준다.   
+
+<p align="center"><img src="https://github.com/suhyeong-jeon/Fast_R_CNN/assets/70623959/5896ff0c-cdb1-47cc-8155-bd71387f9b31"></p>
+
 ##### 2) 네트워크의 마지막 fc layer를 2개의 fc layer로 대체한다. 첫 번째 fc layer는 K개의 class와 배경을 포함한 K+1개의 output unit을 가지는 Classifier고, 두 번째 fc layer는 각 class 별로 bounding box의 좌표를 조정하여 (K+1)*4개의 output unit을 가지는 bounding box regressor다.   
 ##### 3) conv lyaer3까지의 가중치값는 freeze(고정)시켜주고, 이후 conv layer4부터 fc layer3까지의 가중치값이 학습될 수 있도록 fine tuning 해준다.   
 ##### 4) 네트워크가 원본 이미지와 Selective Search 알고리즘을 통해 추출된 Region Proposals 집합을 입력으로 받을 수 일도록 변환시켜 준다.   
