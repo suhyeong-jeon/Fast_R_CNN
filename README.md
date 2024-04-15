@@ -88,7 +88,7 @@
 ##### 3. Feature Extraction(~layer13 pre-pooling) by VGG 16   
 #####   
 ##### VGG16모델에 224 * 224 * 3 크기의 원본 이미지를 입력하고, layer13까지의 feature map을 추출한다.   
-##### Input : 224 * 224 * 3 sized image, Process : Feature extraction by VGG16, Output : 14 * 14 * 12 feature maps   
+##### Input : 224 * 224 * 3 sized image, Process : Feature extraction by VGG16, Output : 14 * 14 * 512 feature maps   
 #####   
 
 ##### 4. Max pooling by RoI Pooling   
